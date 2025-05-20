@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="shortcut icon" href="../static/img/duck.png" type="image/x-icon">
+    <title>Duck List</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img id="duck" src="{{ url_for('static', filename='./img/duck.png') }}" alt="">
+            <h1>Duck List</h1>
+        </nav>
+        <button class="btn-menu"><span class="material-symbols-outlined">menu</span></button>
+        <nav class="menu">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">Avaliation</a>
+        </nav>
+    </header>
+
+    <section>
+        <div class="cont-form">
+            <div class="top">
+                <h1>Crie sua tarefa !</h1>
+                <form action="/create" method="POST" class="form-create">
+                    <input type="text" name="nome_tarefa" required placeholder="adicione sua tarefa">
+                    <button type="submit"><span class="material-symbols-outlined">add</span></button>
+                </form>
+            </div>
+
+            <div class="lista-tarefa">
+                <ul>
+                    {% for tarefa in tasks %}
+                    <li>
+                        <div class="wrap-forms">
+                            <form class="form-edit" action="/editar/{{ tarefa.id }}" method="POST">
+                                <input type="text" name="nome_tarefa" value="{{ tarefa.tarefa }}">
+                                <button type="submit">Atualizar <span
+                                        class="material-symbols-outlined">refresh</span></button>
+                            </form>
+
+                            <form class="form-delete" action="/delete/{{ tarefa.id }}" method="POST">
+                                <button type="submit"><span class="material-symbols-outlined">delete</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+<script defer src="{{ url_for('static', filename='./js/duck.js') }}"></script>
+
+</html>

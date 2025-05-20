@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: whitesmoke;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: #ffff69;
+    box-shadow: 0px 0px 6px rgb(0,0,0,0.4);
+    position: relative;
+}
+
+header p{
+    position: absolute;
+    top: 12px;
+    left: 90px;
+    font-weight: 600;
+    color: #1e1e1e;
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+
+header img{
+    width: 70px;
+    transition: 0.3s ease-in-out;
+}
+
+header img:hover{
+    scale: 1.1;
+    transform: translateY(-5px);
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header nav h1{
+    font-size: 30px;
+    color: #fea50a;
+}
+
+.btn-menu{
+    display: none;
+    background: #fea50a;
+    color: #ffff69;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 5px #966208;
+}
+
+.btn-menu:focus{
+    transform: translateY(4px);
+    box-shadow: 0 2px #966208;
+}
+
+header nav a{
+    color: #fea50a;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+header nav a::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #fea50a;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+header nav a:hover::before{
+    width: 100%;
+}
+
+header nav a:hover{
+    transform: translateY(-4px);
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.cont-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1024px;
+}
+
+.top{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffff69;
+    padding: 15px 50px;
+    border-radius: 12px 12px 0px 0px;
+    box-shadow: 3px 3px 10px rgb(0,0,0,0.4);
+}
+
+.top h1{
+    color: #fea50a;
+}
+
+.form-create {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 500px;
+    background: #fffef0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-create input {
+    flex: 1;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #fea50a;
+    background: #ffffcc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form-create input:focus {
+    border-color: rgb(0, 177, 0);
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #fea50a66;
+}
+
+.form-create button {
+    padding: 10px;
+    background: #fea50a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.05s ease-in-out;
+    box-shadow: 0 5px #966208;
+}
+
+.form-create button:active {
+    transform: translateY(4px);
+    box-shadow:inset 0 1px #966208;
+    background: green;
+}
+
+
+.lista-tarefa{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.lista-tarefa ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    gap: 12px;
+    padding: 15px 0px;
+    justify-content: center;
+}
+
+.lista-tarefa ul li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #fea50a;
+    padding-bottom: 10px;
+}
+
+.wrap-forms {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.form-edit {
+    flex: 1;
+    background: #fffef0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-edit input {
+    flex: 1;
+    height: 40px;
+    padding: 0 12px;
+    outline: none;
+    border: 1px solid #fea50a;
+    background: #ffffcc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.form-edit input:focus {
+    border-color: rgb(0, 177, 0);
+    background-color: #fff;
+}
+
+.form-edit button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 12px;
+    background: #fea50a;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    box-shadow: -2px 3px #966208, -4px 6px #704907;
+}
+
+.form-edit button:focus {
+    box-shadow: inset -4px 4px 0 #966208;
+}
+
+.form-delete button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px black;
+}
+
+.form-delete button:focus{
+    transform: translateY(2px);
+    box-shadow: 0px 2px black;
+}
+
+@media (max-width: 1130px) {
+    .top.bottom {
+        flex-direction: column;
+    }
+
+    .form-create.bottom {
+        flex-direction: column;
+    }
+
+    .form-create.bottom input{
+        width: 100%;
+        padding: 20px 20px;
+    }
+
+    .box-comentario{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .top{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .top form button{
+        max-width: 200px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .form-create {
+        max-width: 100%;
+    }
+
+    .top.bottom{
+        width: 100%;
+    }
+
+    .lista_comentario{
+        width: 95%;
+    }
+    
+    .box-comentario{
+        width: 95%;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .top h1{
+        font-size: 1.8rem;
+    }
+
+    .lista-tarefa{
+        width: 100%;
+        padding: 5px;
+    }
+
+    .wrap-forms{
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .top{
+        width: 95%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 8px;
+    }
+
+    .btn-menu{
+        display: flex;
+    }
+
+    .menu{
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        display: flex;
+        gap: 12px;
+        overflow: hidden;
+        transition: ease-in-out 0.3s;
+        max-height: 0;
+        background: rgba(0,0,0,0.5);
+    }
+
+    .menu.ativo{
+        max-height: 200px;
+        padding: 15px 8px;
+    }
+
+    .form-create,
+    .form-edit {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .form-create > input,
+    .form-edit > input {
+        padding: 20px 10px !important;
+        font-size: 16px !important;
+    }
+
+    .top form button{
+        max-width: 100px;
+    }
+
+    .form-edit button{
+        max-width: 150px;
+    }
+
+    .form-delete{
+        position: absolute;
+        right: 35px;
+        bottom: 10px;
+    }
+    
+    .box-comentario{
+        width: 95%;
+    }
+}
